@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+$textcolor:#e1e1e1;
+$textcont:#18181a;
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111112;
+    color: $textcolor;
+}
+.Logo_Name {
+    background-color: $textcont;
+    border-radius: 25px;
+    padding: 15px;
+    margin: 2% 7%;
+    width: 170px;
+}
+section {
+    background-color: $textcont;
+    border-radius: 17px;
+    padding: 35px;
+    margin: 2% 7%;
+    height: 400px;
+}
+.main_flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button {
+        min-width: 35px;
+        min-height: 35px;
+        margin: 0% 0%;
+    }
+}
+.convInput {
+    border-radius: 15px;
+    height: 76px;
+    margin: 0% 7%;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, .12);
+}
+.Textinput-Control {
+    color: $textcolor;
+    border: 0 solid transparent;
+    height: 66px;
+    margin: 5px 7%;
+    width: 60%;
+    text-align: right;
+    background-color: $textcont;
+    outline:0 ;
+    font-size: 1.7em;
+
+}
+.buttonSelect {
+    background-color: #2a2a2c;
+    margin: 10% 5%;
+    width: 40%;
+    height: 80%;
+    border-radius: 15px;
+
+    button {
+        margin: 13px 27px;
+    }
+}
