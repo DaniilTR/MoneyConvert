@@ -1,4 +1,8 @@
 import './App.css';
+import ConvInput from './ConvInput';
+
+
+
 
 function App() {
   return (
@@ -11,29 +15,9 @@ function App() {
       <section>
         <div className="main">
           <div className='main_flex'>
-            <div className='convInput'>
-              <input 
-                className="Textinput-Control" 
-                inputmode="decimal" 
-                maxlength="20"
-                defaultValue="0" 
-              />
-              <span className='buttonSelect'>
-                <button></button>
-              </span>
-            </div>
+            <ConvInput/>
             <button className='Buttonconv'></button>
-            <div className='convInput'>
-              <input   
-                className="Textinput-Control" 
-                inputmode="decimal" 
-                maxlength="20" 
-                defaultValue="0" 
-              />
-              <span className='buttonSelect'>
-                <button></button>
-              </span>
-            </div>
+            <ConvInput/>
           </div>
         </div>
         <h3 style={{margin: '25px'}}> Актуальный курс валют </h3>
