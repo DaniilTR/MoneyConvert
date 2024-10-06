@@ -5,25 +5,25 @@
 
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
   background-color: #111112;
   color: #e1e1e1;
 }
 
-.Logo_Name {
-  background-color: #18181a;
-  border-radius: 25px;
-  padding: 15px;
-  margin: 2% 7%;
-  width: 170px;
-}
-
+.Logo_Name,
 section {
   background-color: #18181a;
   border-radius: 17px;
   padding: 35px;
   margin: 2% 7%;
+}
+
+.Logo_Name {
+  border-radius: 25px;
+  padding: 15px;
+  width: 170px;
+}
+
+section {
   height: 400px;
 }
 
@@ -35,13 +35,17 @@ section {
 .main_flex button {
   min-width: 35px;
   min-height: 35px;
-  margin: 0% 0%;
+  background-color: #2a2a2c;
+  transition: background-color 0.3s ease;
+}
+.main_flex button:hover {
+  background-color: rgb(66.9069767442, 66.9069767442, 70.0930232558);
 }
 
 .convInput {
   border-radius: 15px;
   height: 76px;
-  margin: 0% 7%;
+  margin: 0 7%;
   width: 300px;
   display: flex;
   align-items: center;
@@ -51,7 +55,7 @@ section {
 
 .Textinput-Control {
   color: #e1e1e1;
-  border: 0 solid transparent;
+  border: 0;
   height: 66px;
   margin: 5px 7%;
   width: 60%;
@@ -60,6 +64,10 @@ section {
   outline: 0;
   font-size: 1.7em;
 }
+.Textinput-Control::-webkit-outer-spin-button, .Textinput-Control::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 .buttonSelect {
   background-color: #2a2a2c;
@@ -67,9 +75,33 @@ section {
   width: 40%;
   height: 80%;
   border-radius: 15px;
+  border: 0;
+  transition: background-color 0.3s ease;
+}
+.buttonSelect:hover {
+  background-color: rgb(66.9069767442, 66.9069767442, 70.0930232558);
 }
 .buttonSelect button {
   margin: 13px 27px;
 }
 
-/*# sourceMappingURL=app.css.map */
+.currencies {
+  width: 68px;
+  color: #fff;
+  position: absolute;
+  top: 207px;
+  background-color: #2a2a2c;
+  border-radius: 5px;
+  list-style: none;
+  padding: 10px;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+.currencies li::before {
+  background-color: #5d5d63;
+}
+.currencies li:hover {
+  background-color: rgb(66.9069767442, 66.9069767442, 70.0930232558);
+}
+
+/*# sourceMappingURL=App.css.map */
