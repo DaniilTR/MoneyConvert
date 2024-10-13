@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/DaniilTR/MoneyConvert/static/css/main.e4a3382f.css",
+    "main.js": "/DaniilTR/MoneyConvert/static/js/main.f4888476.js",
+    "index.html": "/DaniilTR/MoneyConvert/index.html",
+    "main.e4a3382f.css.map": "/DaniilTR/MoneyConvert/static/css/main.e4a3382f.css.map",
+    "main.f4888476.js.map": "/DaniilTR/MoneyConvert/static/js/main.f4888476.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e4a3382f.css",
+    "static/js/main.f4888476.js"
+  ]
+}
