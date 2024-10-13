@@ -12,7 +12,13 @@ function ConvInput({ value, currency, onChangeValue, onChangeCurrency }) {
     onChangeCurrency(cur);
     setIsOpen(false); // Закрываем меню после выбора
   };
-
+  const handleChange = (e) => {
+    // Проверяем длину введенного значения
+    if (e.target.value.length <= 8) {
+      onChangeValue(e.target.value);
+    }
+  }
+  
   // Функция для открытия/закрытия меню
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -21,12 +27,12 @@ function ConvInput({ value, currency, onChangeValue, onChangeCurrency }) {
   return (
     <div className="convInput">
       <input
-        onChange={(e) => onChangeValue(e.target.value)}
+        onChange={handleChange}
         value={value}
         type="number"
         className="Textinput-Control"
       />
-      <p>{currency}</p>
+      <p>{currency.toUpperCase()}</p>
     <button onClick={toggleDropdown} className='buttonSelect' >
         <svg fill="#fff"
             className='svg'
@@ -50,7 +56,7 @@ function ConvInput({ value, currency, onChangeValue, onChangeCurrency }) {
                 key={cur}
                 style={listItemStyles}
                 >
-                {cur}
+                {cur.toUpperCase()}
             </li>
             ))}
         </ul>

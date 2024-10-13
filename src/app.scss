@@ -10,6 +10,17 @@ $secondary-bgcolor: #2a2a2c;
 $highlight-color: #5d5d63;
 $hover-lighten-factor: 10%; // Коэффициент осветления для hover
 
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
 body {
     font-family: Arial, sans-serif;
     background-color: $bgcolor;
@@ -81,6 +92,36 @@ section {
         margin: 0;
     }
 }
+.Buttonconv {
+    display: flex;  // Используем flex для выравнивания
+    align-items: center;  // Выравнивание по центру
+    background-color: #4CAF50;  // Цвет фона кнопки
+    color: white;  // Цвет текста и иконки
+    border: none;  // Убираем границу
+    border-radius: 5px;  // Закругление углов
+    padding: 10px;  // Отступы внутри кнопки
+    font-size: 18px;  // Размер шрифта
+    cursor: pointer;  // Курсор в виде указателя
+    transition: background-color 0.3s ease, transform 0.2s ease;  // Анимация фона и масштаба
+  
+    // Эффект при наведении
+    &:hover {
+        background-color: #45a049;  // Более светлый цвет при наведении
+        transform: scale(1.05);  // Увеличение кнопки при наведении
+    }
+    // Эффект при нажатии
+    &:active {
+        transform: scale(0.95);  // Уменьшение кнопки при нажатии
+    }
+    // Стили для иконки
+    .icon {
+        width: 24px;  // Ширина иконки
+        height: 24px;  // Высота иконки
+        fill: currentColor;  // Иконка будет использовать текущий цвет текста
+    }
+}
+
+
 
 .buttonSelect {
     background-color: $secondary-bgcolor;
@@ -102,24 +143,87 @@ section {
 
 
 .currencies {
-    width: 68px;
+    width: 80px;  // Увеличиваем ширину для лучшего восприятия
     color: #fff;
     position: absolute;
     top: 207px;
     background-color: $secondary-bgcolor;
     border-radius: 5px;
-    list-style: none;
+    list-style: none;  // Убираем стандартные маркеры у списка
     padding: 10px;
     z-index: 1000;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;  // Добавим анимацию для тени
 
+    // Добавим тень для более красивого вида
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    // Убедимся, что элементы списка также имеют стиль
     li {
-        &::before {
-            background-color: $highlight-color;
-        }
+        border-bottom: 1px solid #e1e8ed;  // Разделительная линия между пунктами
+        font-size: 16px;
+        display: flex;  // Гибкая компоновка для текста
+        justify-content: center;  // Центрируем содержимое по горизонтали
+        align-items: center;  // Выравнивание по центру
+        padding: 8px;  // Внутренние отступы
+        margin: 4px 0;  // Отступы между элементами списка
 
         &:hover {
-            background-color: lighten($secondary-bgcolor, $hover-lighten-factor); // Осветляем цвет при наведении
+            color: $bgcolor;  // Цвет текста при наведении
+            background-color: $textcolor;  // Светлый фон при наведении
+            transition: background-color 0.3s ease;  // Плавный переход цвета фона
+
+            // Увеличиваем текст при наведении
+            p {
+                color: $bgcolor;  // Меняем цвет текста при наведении
+                transform: scale(1.1);  // Увеличиваем текст
+                transition: transform 0.3s ease;  // Плавный переход для увеличения текста
+            }
         }
     }
+}
+
+
+.nstroka {
+    list-style-type: none;  // Убираем стандартные маркеры у списка
+    padding: 0;
+    margin: 20px 0 20px 25px;
+}
+
+.stroka {
+    display: flex;  // Делаем строчку гибкой
+    justify-content: space-between;  // Равномерно распределяем элементы
+    align-items: center;  // Выравниваем по центру
+    padding: 10px 15px;  // Внутренние отступы
+    border-bottom: 1px solid #e1e8ed;  // Разделительная линия между пунктами
+    font-family: 'Roboto', sans-serif;  // Стильный и читаемый шрифт
+    font-size: 16px;  // Размер шрифта
+
+    &:last-child {
+        border-bottom: none;  // Убираем линию у последнего элемента
+    }
+
+    p {
+
+        margin: 0;
+        color: $textcolor;  // Цвет текста
+    }
+
+    // При наведении
+    &:hover {
+        color: $bgcolor;
+        background-color: $textcolor;  // Светлый синий фон при наведении
+        transition: background-color 0.3s ease;  // Плавный переход цвета фона
+
+        p {
+            color: $bgcolor;  // Меняем цвет текста при наведении
+            transform: scale(1.1);  // Увеличиваем текст
+        }
+    }
+}
+
+// Добавим немного анимации при появлении списка
+.nstroka {
+    opacity: 0;
+    transform: translateY(20px);  // Начальная позиция (ниже)
+    animation: fadeInUp 0.5s ease forwards;  // Анимация "всплытия" списка
 }

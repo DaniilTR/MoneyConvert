@@ -3,6 +3,16 @@
   margin: 0;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 body {
   font-family: Arial, sans-serif;
   background-color: #111112;
@@ -69,6 +79,31 @@ section {
   margin: 0;
 }
 
+.Buttonconv {
+  display: flex;
+  align-items: center;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.Buttonconv:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+.Buttonconv:active {
+  transform: scale(0.95);
+}
+.Buttonconv .icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
 .buttonSelect {
   background-color: #2a2a2c;
   margin: 10% 5%;
@@ -86,7 +121,7 @@ section {
 }
 
 .currencies {
-  width: 68px;
+  width: 80px;
   color: #fff;
   position: absolute;
   top: 207px;
@@ -95,13 +130,65 @@ section {
   list-style: none;
   padding: 10px;
   z-index: 1000;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-.currencies li::before {
-  background-color: #5d5d63;
+.currencies li {
+  border-bottom: 1px solid #e1e8ed;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  margin: 4px 0;
 }
 .currencies li:hover {
-  background-color: rgb(66.9069767442, 66.9069767442, 70.0930232558);
+  color: #111112;
+  background-color: #e1e1e1;
+  transition: background-color 0.3s ease;
+}
+.currencies li:hover p {
+  color: #111112;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
-/*# sourceMappingURL=App.css.map */
+.nstroka {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0 20px 25px;
+}
+
+.stroka {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #e1e8ed;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+.stroka:last-child {
+  border-bottom: none;
+}
+.stroka p {
+  margin: 0;
+  color: #e1e1e1;
+}
+.stroka:hover {
+  color: #111112;
+  background-color: #e1e1e1;
+  transition: background-color 0.3s ease;
+}
+.stroka:hover p {
+  color: #111112;
+  transform: scale(1.1);
+}
+
+.nstroka {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/*# sourceMappingURL=app.css.map */
