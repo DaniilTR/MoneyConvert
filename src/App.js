@@ -15,6 +15,7 @@ const App = () => {
   };
 
   // Функция для пересчета цен на основе текущих валют
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const updatePrices = () => {
     if (Eur[FromCur] && Eur[ToCur]) {
       const priceInBaseCurrency = truncateToTwoDecimals(FromPrice / Eur[FromCur]);
@@ -37,7 +38,7 @@ const App = () => {
   // Обновляем цены при изменении FromPrice, FromCur или ToCur
   React.useEffect(() => {
     updatePrices();
-  }, [FromPrice, FromCur, ToCur]);
+  }, [FromPrice, FromCur, ToCur, updatePrices]);
 
   const swapValues = () => {
     const tempPrice = FromPrice;
